@@ -1,0 +1,18 @@
+{
+  "name": "layers-featurelayer",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run copy:all && vite",
+    "build": "npm run copy:all && vite build",
+    "copy:all": "npm run copy:core && npm run copy:calcite",
+    "copy:core": "cpx ./node_modules/@arcgis/core/assets/**/*.* ./public/assets",
+    "copy:calcite": "cpx ./node_modules/@esri/calcite-components/dist/calcite/assets/**/*.* ./public/assets"
+  },
+  "devDependencies": {
+    "vite": "^5.0.12",
+    "cpx": "^1.5.0"
+  },
+  "dependencies": {
+    "@arcgis/core": "~4.31.0"
+  }
+}
